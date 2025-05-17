@@ -1,16 +1,323 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="pt-BR">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="https://6828ef6b83322741c1a477bb--warm-selkie-c73506.netlify.app/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Construtora J3 - Construindo Excelência, Moldando o Futuro</title>
-    <meta name="description" content="A Construtora J3 é uma empresa líder em construção civil oferecendo serviços residenciais, comerciais e industriais com foco em qualidade e sustentabilidade.">
-    <meta name="keywords" content="construção, construção civil, construção residencial, construção comercial, reforma, Brasil, Rio de Janeiro">
-    <script type="module" crossorigin src="assets/index-UkiV1uLt.js"></script>
-    <link rel="stylesheet" crossorigin href="assets/index-DTIwSlnm.css">
-  </head>
-  <body>
-    <div id="root"></div>
-  </body>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Construtora J3 - Construindo Excelência, Moldando o Futuro</title>
+  <meta name="description" content="A Construtora J3 é uma empresa líder em construção civil oferecendo serviços residenciais, comerciais e industriais com foco em qualidade e sustentabilidade.">
+  <meta name="keywords" content="construção, construção civil, construção residencial, construção comercial, reforma, Brasil, Rio de Janeiro">
+  
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            heading: ['Poppins', 'sans-serif'],
+            body: ['Inter', 'sans-serif'],
+          },
+          colors: {
+            primary: {
+              50: '#EFF6FF',
+              100: '#DBEAFE',
+              200: '#BFDBFE',
+              300: '#93C5FD',
+              400: '#60A5FA',
+              500: '#3B82F6',
+              600: '#0F3460',
+              700: '#0C2B4E',
+              800: '#08203C',
+              900: '#041529',
+            },
+            accent: {
+              50: '#FEF2F2',
+              100: '#FEE2E2',
+              200: '#FECACA',
+              300: '#FCA5A5',
+              400: '#F87171',
+              500: '#EF4444',
+              600: '#E94560',
+              700: '#B91C1C',
+              800: '#991B1B',
+              900: '#7F1D1D',
+            },
+            neutral: {
+              50: '#F9FAFB',
+              100: '#F3F4F6',
+              200: '#E5E7EB',
+              300: '#D1D5DB',
+              400: '#9CA3AF',
+              500: '#6B7280',
+              600: '#4B5563',
+              700: '#374151',
+              800: '#1F2937',
+              900: '#111827',
+            },
+            success: {
+              50: '#ECFDF5',
+              500: '#10B981',
+              600: '#059669',
+            },
+            warning: {
+              50: '#FFFBEB',
+              500: '#F59E0B',
+              600: '#D97706',
+            },
+            error: {
+              50: '#FEF2F2',
+              500: '#EF4444',
+              600: '#DC2626',
+            },
+          },
+        },
+      },
+    }
+  </script>
+  
+  <!-- Base Styles -->
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      color: #1F2937;
+      background-color: white;
+    }
+    
+    h1, h2, h3, h4, h5, h6 {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 600;
+      color: #041529;
+    }
+    
+    .container {
+      padding-left: 1rem;
+      padding-right: 1rem;
+      margin-left: auto;
+      margin-right: auto;
+      max-width: 80rem;
+    }
+    
+    @media (min-width: 640px) {
+      .container {
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+      }
+    }
+    
+    @media (min-width: 1024px) {
+      .container {
+        padding-left: 2rem;
+        padding-right: 2rem;
+      }
+    }
+    
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.75rem 1.5rem;
+      font-weight: 500;
+      transition-property: color, background-color;
+      border-radius: 0.375rem;
+      box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    }
+    
+    .btn:focus {
+      outline: none;
+      box-shadow: 0 0 0 2px #fff, 0 0 0 4px currentColor;
+    }
+    
+    .btn-primary {
+      background-color: #0F3460;
+      color: white;
+    }
+    
+    .btn-primary:hover {
+      background-color: #0C2B4E;
+    }
+    
+    .btn-secondary {
+      background-color: #E94560;
+      color: white;
+    }
+    
+    .btn-secondary:hover {
+      background-color: #B91C1C;
+    }
+    
+    .section-title {
+      margin-bottom: 0.5rem;
+      font-size: 1.875rem;
+      font-weight: 700;
+    }
+    
+    @media (min-width: 640px) {
+      .section-title {
+        font-size: 2.25rem;
+      }
+    }
+    
+    @media (min-width: 768px) {
+      .section-title {
+        font-size: 3rem;
+      }
+    }
+    
+    .section-subtitle {
+      margin-bottom: 3rem;
+      font-size: 1.125rem;
+      color: #4B5563;
+      max-width: 48rem;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    
+    .card {
+      overflow: hidden;
+      background-color: white;
+      border-radius: 0.5rem;
+      box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+      transition-property: box-shadow;
+    }
+    
+    .card:hover {
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    }
+    
+    .fade-in {
+      animation: fadeIn 0.8s ease-in-out;
+    }
+    
+    .slide-up {
+      animation: slideUp 0.8s ease-out;
+    }
+    
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    
+    @keyframes slideUp {
+      from { transform: translateY(40px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+  <div id="root"></div>
+  
+  <!-- React and ReactDOM -->
+  <script src="https://unpkg.com/react@18.3.1/umd/react.production.min.js"></script>
+  <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.production.min.js"></script>
+  
+  <!-- React Router -->
+  <script src="https://unpkg.com/react-router-dom@6.22.3/dist/umd/react-router-dom.production.min.js"></script>
+  
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide-react@0.344.0/dist/umd/lucide-react.min.js"></script>
+  
+  <!-- Application Code -->
+  <script>
+    // Company Info
+    const companyInfo = {
+      name: "Construtora J3",
+      founded: 2005,
+      mission: "Construir estruturas inovadoras e sustentáveis que enriqueçam comunidades e resistam ao teste do tempo.",
+      vision: "Ser a principal construtora do Brasil, reconhecida por qualidade, sustentabilidade e excelência arquitetônica.",
+      values: [
+        "Qualidade artesanal em cada detalhe",
+        "Responsabilidade ambiental em todos os projetos",
+        "Inovação em design e métodos construtivos",
+        "Integridade em todas as relações com clientes e parceiros",
+        "Desenvolvimento comunitário através de projetos conscientes"
+      ],
+      contact: {
+        phone: "(22) 99262-3899",
+        email: "contato@construtoraj3.com.br",
+        address: "Av. Atlântica, 2000, Rio de Janeiro, RJ",
+        hours: "Segunda a Sexta: 8:00-18:00"
+      },
+      social: {
+        facebook: "https://facebook.com/construtoraj3",
+        instagram: "https://instagram.com/construtoraj3",
+        linkedin: "https://linkedin.com/company/construtoraj3"
+      }
+    };
+
+    // Services Data
+    const services = [
+      {
+        id: 1,
+        title: "Construção Residencial",
+        description: "De casas dos sonhos a condomínios multifamiliares, nossa equipe especializada oferece construção residencial de alta qualidade com atenção aos detalhes e excelência em acabamento.",
+        icon: "Home",
+        benefits: [
+          "Projetos personalizados para suas necessidades",
+          "Materiais e acabamentos de alta qualidade",
+          "Práticas de construção sustentável",
+          "Gestão transparente do projeto"
+        ],
+        image: "https://images.pexels.com/photos/534220/pexels-photo-534220.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+      },
+      // ... More services
+    ];
+
+    // Projects Data
+    const projects = [
+      {
+        id: 1,
+        title: "Residência de Luxo à Beira-mar",
+        description: "Uma deslumbrante propriedade à beira-mar com design contemporâneo e vistas panorâmicas do oceano. Esta residência de luxo combina arquitetura moderna com práticas de construção sustentável.",
+        location: "Rio de Janeiro, RJ",
+        features: ["5 Quartos", "6 Banheiros", "Piscina Infinita", "Sistema Smart Home", "3.500 m²"],
+        price: "R$ 8.500.000",
+        images: [
+          "https://images.pexels.com/photos/323780/pexels-photo-323780.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+          "https://images.pexels.com/photos/1396132/pexels-photo-1396132.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+        ],
+        category: "residential",
+        status: "completed",
+        year: 2023
+      },
+      // ... More projects
+    ];
+
+    // Team Members Data
+    const teamMembers = [
+      {
+        id: 1,
+        name: "Carlos Oliveira",
+        role: "Fundador e CEO",
+        image: "https://images.pexels.com/photos/2379005/pexels-photo-2379005.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+        bio: "Com mais de 25 anos na construção civil, Carlos fundou a Construtora J3 com a visão de criar edificações inovadoras e sustentáveis que resistam ao teste do tempo."
+      },
+      // ... More team members
+    ];
+
+    // React Components
+    const App = () => {
+      return React.createElement(Router, null,
+        React.createElement(Routes, null,
+          React.createElement(Route, { path: "/", element: React.createElement(Home) }),
+          React.createElement(Route, { path: "/about", element: React.createElement(About) }),
+          React.createElement(Route, { path: "/services", element: React.createElement(Services) }),
+          React.createElement(Route, { path: "/projects", element: React.createElement(Projects) }),
+          React.createElement(Route, { path: "/contact", element: React.createElement(Contact) }),
+          React.createElement(Route, { path: "/blog", element: React.createElement(Blog) })
+        )
+      );
+    };
+
+    // ... Component implementations for Home, About, Services, Projects, Contact, Blog
+
+    // Mount the application
+    const root = ReactDOM.createRoot(document.getElementById('root'));
+    root.render(React.createElement(React.StrictMode, null,
+      React.createElement(App)
+    ));
+  </script>
+</body>
 </html>
